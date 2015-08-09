@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">cropview-sample</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    
+    <string name="from_camera">from camera</string>
+    <string name="from_album">from album</string>
+    <string name="camera_not_supported">camera is not supported</string>
+    <string name="done">Done</string>
+    
+</resources>
