@@ -142,8 +142,8 @@ public class MainActivity extends Activity {
 		}
 		Intent intent = new Intent(this, CropActivity.class);
 		intent.setData(uri);
-		intent.putExtra("outputX", CropUtils.dip2px(this, 200));
-		intent.putExtra("outputY", CropUtils.dip2px(this, 200));
+		intent.putExtra("outputX", CropUtils.dip2px(this, 300));
+		intent.putExtra("outputY", CropUtils.dip2px(this, 400));
 		intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 		startActivity(intent);
 	}

@@ -61,10 +61,6 @@ public class CropFileUtils {
 		if (Environment.MEDIA_MOUNTED.equals(Environment
 				.getExternalStorageState())) {
 			cachePath = context.getExternalCacheDir().getPath();
-		} else if (!Environment.isExternalStorageRemovable()) {
-			cachePath = context.getExternalCacheDir().getPath();
-		} else {
-			// NO-OP
 		}
 
 		if (TextUtils.isEmpty(cachePath)) {
@@ -75,20 +71,10 @@ public class CropFileUtils {
 	}
 
 	/**
-	 * Get a file path from a Uri. This will get the the path for Storage Access
-	 * Framework Documents, as well as the _data field for the MediaStore and
-	 * other file-based ContentProviders.<br>
-	 * <br>
-	 * Callers should check whether the path is local before assuming it
-	 * represents a local file.
 	 * 
 	 * @param context
-	 *            The context.
 	 * @param uri
-	 *            The Uri to query.
-	 * @see #isLocal(String)
-	 * @see #getFile(Context, Uri)
-	 * @author paulburke
+	 * @return
 	 */
 	@TargetApi(Build.VERSION_CODES.KITKAT)
 	public static String getPath(final Context context, final Uri uri) {
@@ -97,13 +83,8 @@ public class CropFileUtils {
 
 		// DocumentProvider
 		if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-			// LocalStorageProvider
-			if (isLocalStorageDocument(uri)) {
-				// The path is the id
-				return DocumentsContract.getDocumentId(uri);
-			}
 			// ExternalStorageProvider
-			else if (isExternalStorageDocument(uri)) {
+			if (isExternalStorageDocument(uri)) {
 				final String docId = DocumentsContract.getDocumentId(uri);
 				final String[] split = docId.split(":");
 				final String type = split[0];
@@ -162,17 +143,6 @@ public class CropFileUtils {
 		}
 
 		return null;
-	}
-
-	/**
-	 * @param uri
-	 *            The Uri to check.
-	 * @return Whether the Uri authority is {@link LocalStorageProvider}.
-	 * @author paulburke
-	 */
-	public static boolean isLocalStorageDocument(Uri uri) {
-		return "com.ianhanniballake.localstorage.documents".equals(uri
-				.getAuthority());
 	}
 
 	/**

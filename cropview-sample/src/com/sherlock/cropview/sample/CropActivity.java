@@ -69,7 +69,8 @@ public class CropActivity extends Activity {
 		}
 
 		@Override
-		public void onCropFail(String errmsg) {
+		public void onCropFailed(String errmsg) {
+
 		}
 
 		@Override

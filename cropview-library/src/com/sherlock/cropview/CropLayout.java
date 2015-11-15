@@ -376,7 +376,7 @@ public class CropLayout extends FrameLayout {
 	private void performCropFail(String errmsg) {
 		Log.w(LOGTAG, errmsg);
 		if (mOnCropListener != null) {
-			mOnCropListener.onCropFail(errmsg);
+			mOnCropListener.onCropFailed(errmsg);
 		}
 	}
 
@@ -406,7 +406,7 @@ public class CropLayout extends FrameLayout {
 	public static interface OnCropListener {
 		public void onCropSuccess(Uri data);
 
-		public void onCropFail(String errmsg);
+		public void onCropFailed(String errmsg);
 
 		public void onLoadingStateChanged(boolean isLoading);
 	}

@@ -21,7 +21,7 @@ Below is an example of a CropView.
 		}
 
 		@Override
-		public void onCropFail(String errmsg) {
+		public void onCropFailed(String errmsg) {
 		}
 
 		@Override
