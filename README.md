@@ -3,6 +3,7 @@
 Crop large photo with translation, scale and rotation (without distortion and OOM).
 
 ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/0.png) ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/1.png) ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/2.png)
+
 ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/0.png) ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/3.png) ![](https://github.com/KyoSherlock/CropView/raw/master/screenshots/4.png)
 
 # Usage
