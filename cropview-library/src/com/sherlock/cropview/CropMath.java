@@ -111,7 +111,7 @@ public class CropMath {
 	 */
 	public static float[] closestSide(float[] point, float[] corners) {
 		int len = corners.length;
-		float oldMag = Float.POSITIVE_INFINITY; // µãµ½ÏßµÄ¾àÀë£¬default(ÕýÎÞÇî´ó)
+		float oldMag = Float.POSITIVE_INFINITY; // ï¿½ãµ½ï¿½ßµÄ¾ï¿½ï¿½ë£¬default(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		float[] bestLine = null;
 		for (int i = 0; i < len; i += 2) {
 			float[] line = { corners[i], corners[(i + 1) % len],
@@ -348,6 +348,7 @@ public class CropMath {
 		dst.mapRect(rotatedImageRect, image);
 		float swidth = screen.width();
 		float sheight = screen.height();
+		float offsetDx = Math.abs(rotatedImageRect.left);
 		float iwidth = rotatedImageRect.width();
 		float iheight = rotatedImageRect.height();
 		float scale, dx, dy;
@@ -358,7 +359,7 @@ public class CropMath {
 			scale = Math.min(swidth / iwidth, sheight / iheight);
 		}
 
-		dx = (swidth - iwidth * scale) * 0.5f;
+		dx = (swidth - iwidth * scale) * 0.5f + offsetDx;
 		dy = (sheight - iheight * scale) * 0.5f;
 		dst.setRotate(rotation);
 		boolean ps = dst.postScale(scale, scale);
