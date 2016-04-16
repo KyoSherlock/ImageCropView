@@ -15,7 +15,7 @@ Below is an example of a CropView.
 	mCropLayout.setOnCropListener(new OnCropListener() {
 
 		@Override
-		public void onCropSuccess(Uri data) {
+		public void onCropResult(Uri data) {
 			Intent intent = new Intent(CropActivity.this, ResultActivity.class);
 			intent.setData(data);
 			startActivity(intent);
@@ -40,6 +40,10 @@ Below is an example of a CropView.
 ### Version: 1.0
 
   * Initial Build
+
+### Version: 2.0
+
+  * Eclipse to AS
 
 # License
 
